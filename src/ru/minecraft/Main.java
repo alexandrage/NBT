@@ -8,13 +8,13 @@ import ru.minecraft.nbt.NBTTagCompound;
 import ru.minecraft.nbt.NBTTagList;
 
 public class Main {
-    //Тестовый класс, добавляет простой предмет в инвентарь.dat.
+    //РўРµСЃС‚РѕРІС‹Р№ РєР»Р°СЃСЃ, РґРѕР±Р°РІР»СЏРµС‚ РїСЂРѕСЃС‚РѕР№ РїСЂРµРґРјРµС‚ РІ РёРЅРІРµРЅС‚Р°СЂСЊ.dat.
 	public static void main(String[] args) {
-		//Папка с игроками.
-		String p = "cauldron/world/playerdata"; //Путь до папки игроков.
-		//Уид игрока.
-		String UUID = "uuid"; //Уид игрока.
-		//Предмет в json формате, "Slot:0b" не менять.
+		//РџР°РїРєР° СЃ РёРіСЂРѕРєР°РјРё.
+		String p = "cauldron/world/playerdata"; //РџСѓС‚СЊ РґРѕ РїР°РїРєРё РёРіСЂРѕРєРѕРІ.
+		//РЈРёРґ РёРіСЂРѕРєР°.
+		String UUID = "uuid"; //РЈРёРґ РёРіСЂРѕРєР°.
+		//РџСЂРµРґРјРµС‚ РІ json С„РѕСЂРјР°С‚Рµ, "Slot:0b" РЅРµ РјРµРЅСЏС‚СЊ.
 		String Item = 
 				  "{"
 				+ "id:260s,"
@@ -27,14 +27,14 @@ public class Main {
 		OfflineNBT Off = new OfflineNBT(p);
 		NBTTagCompound playerNbt = Off.readFromNBT(UUID);
 		NBTTagList nbttaglist = playerNbt.getTagList("Inventory", 10);
-		System.out.println("Старый инвентарь");
+		System.out.println("РЎС‚Р°СЂС‹Р№ РёРЅРІРµРЅС‚Р°СЂСЊ");
 		System.out.println("--------------------------------------------");
 		for(int i=0;i<nbttaglist.tagCount();i++) {
 			System.out.println(nbttaglist.getCompoundTagAt(i));
 			m.put(nbttaglist.getCompoundTagAt(i).getByte("Slot"), nbttaglist.getCompoundTagAt(i).getByte("Slot"));
 		}
 		if(nbttaglist.tagCount()>35) {
-			System.out.println("Нет места в инвентаре!");
+			System.out.println("РќРµС‚ РјРµСЃС‚Р° РІ РёРЅРІРµРЅС‚Р°СЂРµ!");
 			return;
 		}
 		for(int i=0;i<36;i++) {
@@ -49,7 +49,7 @@ public class Main {
 			}
 		}
 		System.out.println();
-		System.out.println("Новый инвентарь");
+		System.out.println("РќРѕРІС‹Р№ РёРЅРІРµРЅС‚Р°СЂСЊ");
 		System.out.println("--------------------------------------------");
 		for(int i=0;i<nbttaglist.tagCount();i++) {
 			System.out.println(nbttaglist.getCompoundTagAt(i));
