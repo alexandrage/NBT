@@ -22,7 +22,6 @@ public class Main {
 				+ "Count:1s,"
 				+ "Slot:0b,"
 				+ "}";
-		HashMap<Byte,Byt
 		HashMap<Byte,Byte> m = new HashMap<Byte,Byte>();
 		OfflineNBT Off = new OfflineNBT(p);
 		NBTTagCompound playerNbt = Off.readFromNBT(UUID);
