@@ -7,7 +7,7 @@ import ru.minecraft.nbt.NBTException;
 import ru.minecraft.nbt.NBTTagCompound;
 import ru.minecraft.nbt.NBTTagList;
 
-public class Main {
+public class addItem {
     //Тестовый класс, добавляет простой предмет в инвентарь.dat.
 	public static void main(String[] args) {
 		//Папка с игроками.
